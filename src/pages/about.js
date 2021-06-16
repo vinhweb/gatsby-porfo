@@ -7,12 +7,14 @@ const About = ({ data }) => {
   const {
     strapiAbout: { title, image, info, stack },
   } = data
+
+  console.log(image)
   return (
     <>
       <Seo title="About" />
       <section className="about-page">
         <div className="section-center about-center">
-          <img src={image.publicURL} alt={title} className="about-img-svg" />
+          <img src={image.localFile.publicURL} alt={title} className="about-img-svg" />
           <article className="about-text">
             <Title title={title} />
             <p>{info}</p>
@@ -38,7 +40,9 @@ export const query = graphql`
         title
       }
       image {
-        publicURL
+        localFile {
+          publicURL
+        }
       }
     }
   }

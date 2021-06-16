@@ -23,7 +23,9 @@ export const query = graphql`
       description
       title
       image {
-        publicURL
+        localFile {
+          publicURL
+        }
       }
     }
   }

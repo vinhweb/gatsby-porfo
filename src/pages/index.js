@@ -38,8 +38,10 @@ export const query = graphql`
           title
         }
         image {
-          childImageSharp {
-            gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+            }
           }
         }
       }
